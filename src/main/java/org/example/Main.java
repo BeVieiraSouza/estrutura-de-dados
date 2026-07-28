@@ -1,17 +1,46 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+    public class Main {
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+        public static void main(String[] args) {
+
+            // Criando o gerente
+            Gerente gerente = new Gerente("Carlos", 5000);
+
+
+            // Criando o projeto
+            Projeto projeto = new Projeto(
+                    "Sistema de Vendas",
+                    gerente,
+                    3
+            );
+
+
+            // Criando funcionários
+            Funcionario funcionario1 = new Funcionario("Ana", 3000);
+            Funcionario funcionario2 = new Funcionario("João", 3500);
+            Funcionario funcionario3 = new Funcionario("Maria", 2800);
+
+
+            // Adicionando funcionários ao projeto
+            projeto.adicionarFuncionario(funcionario1);
+            projeto.adicionarFuncionario(funcionario2);
+            projeto.adicionarFuncionario(funcionario3);
+
+
+            // Calculando custo antes da finalização
+            System.out.println("Custo do projeto antes de finalizar:");
+            System.out.println("R$ " + projeto.calcularCustoTotal());
+
+
+            // Finalizando projeto
+            projeto.finalizarProjeto();
+
+
+            // Calculando custo depois da finalização
+            System.out.println("\nCusto do projeto após finalizar:");
+            System.out.println("R$ " + projeto.calcularCustoTotal());
+
         }
     }
-}
+
