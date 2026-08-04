@@ -8,6 +8,8 @@ public class ex1{
         vetor.inserir("B");
         vetor.inserir("C");
         vetor.inserir("D");
+        vetor.inserir("E");
+        vetor.inserir("F");
 
         vetor.imprimir();
         System.out.println();
